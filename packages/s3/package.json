@@ -1,6 +1,6 @@
 {
   "name": "@softvence/s3",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "S3 bucket file uploader for softvence",
   "repository": {
     "type": "git",
