@@ -813,12 +813,12 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## License
 
-MIT © [Sabbir Hossain Shuvo](mailto:devlopersabbir@gmail.com)
+MIT © [Sabbir Hossain Shuvo](mailto:softvenceomega@gmail.com)
 
 ## Repository
 
-- **GitHub:** [devlopersabbir/softvence](https://github.com/devlopersabbir/softvence)
-- **Issues:** [Report a bug](https://github.com/devlopersabbir/softvence/issues)
+- **GitHub:** [softvence-agency/softvence](https://github.com/softvence-agency/softvence)
+- **Issues:** [Report a bug](https://github.com/softvence-agency/softvence/issues)
 
 ## Support
 

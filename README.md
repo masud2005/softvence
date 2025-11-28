@@ -62,7 +62,7 @@ npm install -g pnpm
 Clone the repository:
 
 ```bash
-git clone https://github.com/devlopersabbir/softvence.git
+git clone https://github.com/softvence-agency/softvence.git
 cd softvence
 ```
 
@@ -330,13 +330,13 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 👥 Authors
 
-- **Sabbir Hossain Shuvo** - [devlopersabbir@gmail.com](mailto:devlopersabbir@gmail.com)
+- **Sabbir Hossain Shuvo** - [softvenceomega@gmail.com](mailto:softvenceomega@gmail.com)
 
 ## 🔗 Links
 
-- **Repository**: [github.com/devlopersabbir/softvence](https://github.com/devlopersabbir/softvence)
-- **Issues**: [github.com/devlopersabbir/softvence/issues](https://github.com/devlopersabbir/softvence/issues)
-- **Discussions**: [github.com/devlopersabbir/softvence/discussions](https://github.com/devlopersabbir/softvence/discussions)
+- **Repository**: [github.com/softvence-agency/softvence](https://github.com/softvence-agency/softvence)
+- **Issues**: [github.com/softvence-agency/softvence/issues](https://github.com/softvence-agency/softvence/issues)
+- **Discussions**: [github.com/softvence-agency/softvence/discussions](https://github.com/softvence-agency/softvence/discussions)
 
 ## 🌟 Support
 

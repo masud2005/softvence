@@ -1,15 +1,15 @@
 {
   "name": "@softvence/s3",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "S3 bucket file uploader for softvence",
   "repository": {
     "type": "git",
-    "url": "https://github.com/devlopersabbir/softvence"
+    "url": "https://github.com/softvence-agency/softvence"
   },
   "bugs": {
-    "url": "https://github.com/devlopersabbir/softvence/issues"
+    "url": "https://github.com/softvence-agency/softvence/issues"
   },
-  "homepage": "https://github.com/devlopersabbir/softvence#readme",
+  "homepage": "https://github.com/softvence-agency/softvence#readme",
   "keywords": [
     "s3",
     "s3-bucket",
@@ -20,7 +20,11 @@
     "nestjs-file-uploader",
     "nestjs"
   ],
-  "author": "Sabbir Hossain Shuvo <devlopersabbir@gmail.com>",
+  "author": {
+    "name": "Sabbir Hossain Shuvo",
+    "email": "devlopersabbir@gmail.com",
+    "url": "https://devlopersabbir.github.io"
+  },
   "license": "MIT",
   "main": "dist/index.js",
   "typeings": "dist/index.d.ts",
