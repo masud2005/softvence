@@ -1,7 +1,15 @@
-import { DynamicModule, Global, Module } from "@nestjs/common";
+import { DynamicModule, Global, Module, Provider } from "@nestjs/common";
 import { MailModuleOptions } from "./options/module-options";
 import { MAIL_MODULE_OPTIONS } from "./options";
 import { MailService } from "./services/mail.service";
+
+export interface MailModuleAsyncOptions {
+  useFactory: (
+    ...args: any[]
+  ) => Promise<MailModuleOptions> | MailModuleOptions;
+  inject?: any[];
+  imports?: any[];
+}
 
 @Global()
 @Module({})
@@ -49,6 +57,27 @@ export class MailModule {
         MailService,
       ],
       exports: [MailService],
+    };
+  }
+
+  static forRootAsync(options: MailModuleAsyncOptions): DynamicModule {
+    return {
+      global: true,
+      module: MailModule,
+      imports: options.imports || [],
+      providers: [
+        this.createAsyncProviders(options),
+        MailService,
+      ],
+      exports: [MailService],
+    };
+  }
+
+  private static createAsyncProviders(options: MailModuleAsyncOptions): Provider {
+    return {
+      provide: MAIL_MODULE_OPTIONS,
+      useFactory: options.useFactory,
+      inject: options.inject || [],
     };
   }
 }

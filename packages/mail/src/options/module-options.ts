@@ -15,4 +15,6 @@ export type MailModuleOptions = {
         username: string;
         password: string;
       };
+  from?: string;
+  displayName?: string;
 };

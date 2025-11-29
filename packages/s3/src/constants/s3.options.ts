@@ -10,6 +10,8 @@ export type S3ModuleOptions = {
   secretAccessKey: string;
   endpoint?: string;
   cache?: S3CacheOptions;
+  folderResolver?: (mimeType: string) => string;
+  defaultMetadata?: Partial<Metadata>;
 };
 
 export type Metadata = {
@@ -24,5 +26,11 @@ export type S3UploadOptions = {
   fileTypes: "jpeg"; // TODO: add rest of the file type so, that user can make it retricts
   // and others things if needs...
 };
+
+export interface S3ModuleAsyncOptions {
+  useFactory: (...args: any[]) => Promise<S3ModuleOptions> | S3ModuleOptions;
+  inject?: any[];
+  imports?: any[];
+}
 
 export const S3_MODULE_OPTIONS = "S3_MODULE_OPTIONS";

@@ -1,4 +1,4 @@
-import { appMetadata } from "../metadata";
+
 import {
   BadGatewayException,
   Inject,
@@ -69,7 +69,7 @@ export class MailService {
     }
 
     const mailOptions: nodemailer.SendMailOptions = {
-      from: from || `"${appMetadata.displayName}" <${this.moduleOptions}>`,
+      from: from || this.moduleOptions.from || `"${this.moduleOptions.displayName || 'No Reply'}" <no-reply@example.com>`,
       to,
       subject,
       html: finalHtml,

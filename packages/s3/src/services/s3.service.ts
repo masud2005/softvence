@@ -53,11 +53,18 @@ export class S3Service {
     return results;
   }
 
-  async uploadFile(
+  async uploadFile<T = any>(
     file: Express.Multer.File,
-    metadata: Metadata = { ...defaultMetadata },
-  ): Promise<S3Response> {
-    const meta = { ...defaultMetadata, ...metadata };
+    metadata: Metadata = {
+      ...defaultMetadata,
+      ...(this.options.defaultMetadata || {}),
+    },
+  ): Promise<S3Response | T> {
+    const meta = {
+      ...defaultMetadata,
+      ...(this.options.defaultMetadata || {}),
+      ...metadata,
+    };
     const isSmallFile = file.size < meta.maxFileSize!;
     let fileHash: string | null = null;
     let cacheKey: string | undefined;
@@ -113,12 +120,15 @@ export class S3Service {
 
       return response;
     } catch (err) {
-      console.error(err);
-      throw new BadRequestException("Failed to upload file to S3");
+      return err as T;
+      // throw new BadRequestException(err.message);
     }
   }
 
   private getFolderByMimeType(mimeType: string): string {
+    if (this.options.folderResolver) {
+      return this.options.folderResolver(mimeType);
+    }
     if (mimeType.startsWith("image/")) return "images";
     if (mimeType.startsWith("audio/")) return "audio";
     if (mimeType.startsWith("video/")) return "videos";
